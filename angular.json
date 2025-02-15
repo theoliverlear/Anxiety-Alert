@@ -1,0 +1,224 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "anxiety-alert": {
+      "root": "angular",
+      "sourceRoot": "angular",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "build",
+            "index": "angular/index.html",
+            "main": "angular/main.ts",
+            "polyfills": [
+              "angular/polyfills.ts",
+              "@angular/localize/init"
+            ],
+            "tsConfig": "tsconfig.json",
+            "aot": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "angular/assets",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "angular/components/app/app.component.css",
+              "angular/components/elements/nav-bar/nav-bar.component.css",
+              "angular/components/elements/nav-item/nav-item.component.css",
+              "angular/components/elements/ss-anchor/ss-anchor.component.css",
+              "angular/components/elements/ss-button/ss-button.component.css",
+              "angular/components/elements/ss-footer/ss-footer.component.css",
+              "angular/components/elements/ss-img/ss-img.component.css",
+              "angular/components/elements/ss-input/ss-input.component.css",
+              "angular/components/elements/ss-paragraph/ss-paragraph.component.css",
+              "angular/components/elements/ss-title/ss-title.component.css",
+              "angular/components/elements/subtitle/subtitle.component.css"
+            ],
+            "scripts": [
+
+            ],
+            "fileReplacements": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "angular/environments/environment.ts",
+                  "with": "angular/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                }
+              },
+              "sourceMap": false,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": false,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "angular/environments/environment.ts",
+                  "with": "angular/environments/environment.dev.ts"
+                }
+              ],
+              "optimization": false,
+              "outputHashing": "none",
+              "sourceMap": true,
+              "namedChunks": true,
+              "aot": false,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "buildOptimizer": false
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "anxiety-alert:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "anxiety-alert:build:production"
+            },
+            "development": {
+              "buildTarget": "anxiety-alert:build:development"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "anxiety-alert:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "angular/test.ts",
+            "polyfills": [
+              "angular/polyfills.ts",
+              "@angular/localize/init"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "assets": [
+              "angular/assets"
+            ],
+            "styles": [
+              "angular/styles/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "anxiety-alert:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "anxiety-alert:serve:production"
+            },
+            "development": {
+              "devServerTarget": "anxiety-alert:serve:development"
+            }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "build-server",
+            "main": "angular/server/server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "extractLicenses": false
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "angular/environments/environment.ts",
+                  "with": "angular/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true,
+              "extractLicenses": false
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "anxiety-alert:build:development",
+              "serverTarget": "anxiety-alert:server:development"
+            },
+            "production": {
+              "browserTarget": "anxiety-alert:build:production",
+              "serverTarget": "anxiety-alert:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "anxiety-alert:build:production",
+              "serverTarget": "anxiety-alert:server:production"
+            },
+            "development": {
+              "browserTarget": "anxiety-alert:build:development",
+              "serverTarget": "anxiety-alert:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    }
+  }
+}

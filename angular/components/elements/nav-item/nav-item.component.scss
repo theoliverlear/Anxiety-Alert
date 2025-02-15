@@ -1,0 +1,68 @@
+// nav-item.component.scss
+@import "../../../styles/global-variables";
+@import "../../../styles/global-mixins";
+@import "../../../styles/global-functions";
+@import "../../../styles/global-placeholders";
+
+nav-item {
+    @include flex(center, center, row);
+    background-color:  $alabaster-stone;
+    padding: $half-percent;
+    @extend %soft-border-radius;
+    color: $neutral-black;
+    flex-basis: $ten-percent;
+    box-shadow: $falcon-red simplest-calc(0.15) simplest-calc(0.15) 0 0;
+    transition: box-shadow, transform, 0.3s;
+    ss-anchor {
+        a {
+            h4 {
+                font-size: calc($h4-font-size * 0.85);
+            }
+        }
+    }
+    &:hover {
+        box-shadow: $falcon-red simplest-calc(0.25) simplest-calc(0.25) 0 0;
+        cursor: pointer;
+    }
+    &:active {
+        box-shadow: none;
+        transform: translate(simplest-calc(0.15), simplest-calc(0.15));
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    nav-item {
+        flex-basis: calc($eight-percent * 1.15);
+        ss-anchor {
+            a {
+                h4 {
+                    font-size: $h5-font-size;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+   nav-item {
+       flex-basis: calc($six-percent * 1.15);
+       ss-anchor {
+           a {
+               h4 {
+                   font-size: calc($h5-font-size * 0.8);
+               }
+           }
+       }
+   }
+}
+@media screen and (max-width: 500px) {
+    nav-item {
+        flex-basis: calc($five-percent * 1.15);
+        ss-anchor {
+            a {
+                h4 {
+                    font-size: calc($h5-font-size * 0.75);
+                }
+            }
+        }
+    }
+}

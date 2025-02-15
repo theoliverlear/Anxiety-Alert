@@ -1,0 +1,31 @@
+@import "../../../styles/global-variables";
+@import "../../../styles/global-mixins";
+@import "../../../styles/global-functions";
+@import "../../../styles/global-placeholders";
+
+ss-button {
+    @include flex(center, center, row);
+    background-color:  $alabaster-stone;
+    padding: $half-percent;
+    @extend %soft-border-radius;
+    color: $neutral-black;
+    text-align: center;
+    //flex-basis: $ten-percent;
+    box-shadow: $falcon-red simplest-calc(0.15) simplest-calc(0.15) 0 0;
+    transition: box-shadow, transform, 0.3s;
+    ss-anchor {
+        a {
+            h4 {
+                font-size: calc($h4-font-size * 0.85);
+            }
+        }
+    }
+    &:hover {
+        box-shadow: $falcon-red simplest-calc(0.25) simplest-calc(0.25) 0 0;
+        cursor: pointer;
+    }
+    &:active {
+        box-shadow: none;
+        transform: translate(simplest-calc(0.15), simplest-calc(0.15));
+    }
+}

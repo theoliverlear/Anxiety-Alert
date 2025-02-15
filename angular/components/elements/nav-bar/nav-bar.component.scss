@@ -1,0 +1,33 @@
+// nav-bar.component.scss
+@import "../../../styles/global-variables";
+@import "../../../styles/global-mixins";
+@import "../../../styles/global-functions";
+@import "../../../styles/global-placeholders";
+
+nav-bar {
+    @include flex(center, center, column);
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $charcoal;
+    box-shadow: 0 0 simple-calc(1, 0.5) 0 $neutral-black;
+    padding: $half-percent 0;
+    nav {
+        width: 65%;
+        @include flex(space-around, center, row);
+    }
+}
+@media screen and (max-width: 1200px) {
+    nav-bar {
+        nav {
+            width: 73%;
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    nav-bar {
+        nav {
+            width: 91%;
+        }
+    }
+}
