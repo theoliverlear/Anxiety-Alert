@@ -1,0 +1,21 @@
+// anxiety-symptom.component.scss
+@import "../../../styles/global-variables";
+@import "../../../styles/global-mixins";
+@import "../../../styles/global-functions";
+@import "../../../styles/global-placeholders";
+
+anxiety-symptom {
+    @include flex(center, center, column);
+    background-color: $pristine-white;
+    @extend %soft-border-radius;
+    padding: $one-percent;
+    margin: $one-percent auto;
+    //max-width: 90%;
+    width: 75%;
+    box-shadow: $pure-green $quarter-percent $quarter-percent $quarter-percent 0;
+    ss-title {
+        color: $absolute-black;
+        letter-spacing: calc($quarter-percent / 4);
+        //font-style: italic;
+    }
+}
