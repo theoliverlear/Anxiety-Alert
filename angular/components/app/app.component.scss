@@ -52,10 +52,11 @@ body {
         @include basic-margin-padding(0, 0);
         min-height: 100vh;
         //max-height: 100vh;
-        background: linear-gradient(0deg, $pristine-white 10%, $tea-green);
+        //background: linear-gradient(90deg, $pristine-white 35%, $alabaster-stone, $sunset, $bronze);
+        background: radial-gradient(at center,  $tea-green 40%, $modern-green);
         font-family: $jetbrains-mono-font;
         overflow: auto;
-        background-size: 200% 400%;
+        //background-size: 50% 50%;
         //animation: shifting-gradient 50s infinite ease-in-out;
         //flex-grow: 1;
         main {
