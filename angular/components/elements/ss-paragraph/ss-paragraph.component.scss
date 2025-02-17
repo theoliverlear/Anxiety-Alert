@@ -6,9 +6,9 @@
 
 ss-paragraph {
     @include flex(center, center, column);
-    color: $neutral-black;
+    color: $pristine-white;
     //background-color: $alabaster-stone;
-    background-image: radial-gradient($alabaster-stone, $pristine-white);
+    background-image: radial-gradient($neutral-black, $light-charcoal);
     border: $light-charcoal $thin-border solid;
     padding: $half-percent $one-percent;
     @extend %soft-border-radius;
