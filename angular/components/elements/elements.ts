@@ -10,8 +10,22 @@ import {SsInputComponent} from "./ss-input/ss-input.component";
 import {SsParagraphComponent} from "./ss-paragraph/ss-paragraph.component";
 import {SsTitleComponent} from "./ss-title/ss-title.component";
 import {SubtitleComponent} from "./subtitle/subtitle.component";
+import {
+    AnxietyConsoleComponent
+} from "./anxiety-console/anxiety-console.component";
+import {AnxietyScaleComponent} from "./anxiety-scale/anxiety-scale.component";
+import {
+    AnxietySymptomComponent
+} from "./anxiety-symptom/anxiety-symptom.component";
+import {AnxietyCarouselComponent} from "./anxiety-carousel/anxiety-carousel.component";
+import {AnxietyPopupComponent} from "./anxiety-popup/anxiety-popup.component";
 
-export const elements: any[] = [
+export const elements = [
+    AnxietyCarouselComponent,
+    AnxietyConsoleComponent,
+    AnxietyPopupComponent,
+    AnxietyScaleComponent,
+    AnxietySymptomComponent,
     HomeAnchorComponent,
     NavBarComponent,
     NavItemComponent,
@@ -23,5 +37,5 @@ export const elements: any[] = [
     SsInputComponent,
     SsParagraphComponent,
     SsTitleComponent,
-    SubtitleComponent
+    SubtitleComponent,
 ];
