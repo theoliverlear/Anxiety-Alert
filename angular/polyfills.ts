@@ -10,3 +10,7 @@ import 'core-js/es/set';
 import 'core-js/es/string';
 import 'core-js/es/symbol';
 import 'zone.js';
+import '@angular/localize/init';
+
+
+(window as any).global = window;
