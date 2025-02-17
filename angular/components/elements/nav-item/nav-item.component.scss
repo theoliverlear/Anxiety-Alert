@@ -11,7 +11,7 @@ nav-item {
     @extend %soft-border-radius;
     color: $neutral-black;
     flex-basis: $ten-percent;
-    box-shadow: $falcon-red simplest-calc(0.15) simplest-calc(0.15) 0 0;
+    box-shadow: none;
     transition: box-shadow, transform, 0.3s;
     ss-anchor {
         a {
@@ -21,7 +21,7 @@ nav-item {
         }
     }
     &:hover {
-        box-shadow: $falcon-red simplest-calc(0.25) simplest-calc(0.25) 0 0;
+        box-shadow: $light-charcoal simplest-calc(0.15) simplest-calc(0.15) simplest-calc(0.15) 0;
         cursor: pointer;
     }
     &:active {
