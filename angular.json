@@ -16,6 +16,7 @@
             "outputPath": "build",
             "index": "angular/index.html",
             "main": "angular/main.ts",
+            "baseHref": "/",
             "polyfills": [
               "angular/polyfills.ts",
               "@angular/localize/init"
@@ -31,6 +32,10 @@
             ],
             "styles": [
               "angular/components/app/app.component.css",
+              "angular/components/elements/anxiety-console/anxiety-console.component.css",
+              "angular/components/elements/anxiety-popup/anxiety-popup.component.css",
+              "angular/components/elements/anxiety-scale/anxiety-scale.component.css",
+              "angular/components/elements/anxiety-symptom/anxiety-symptom.component.css",
               "angular/components/elements/nav-bar/nav-bar.component.css",
               "angular/components/elements/nav-item/nav-item.component.css",
               "angular/components/elements/ss-anchor/ss-anchor.component.css",
@@ -40,10 +45,11 @@
               "angular/components/elements/ss-input/ss-input.component.css",
               "angular/components/elements/ss-paragraph/ss-paragraph.component.css",
               "angular/components/elements/ss-title/ss-title.component.css",
-              "angular/components/elements/subtitle/subtitle.component.css"
+              "angular/components/elements/subtitle/subtitle.component.css",
+              "angular/components/pages/home/home.component.css"
             ],
             "scripts": [
-
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
             ],
             "fileReplacements": []
           },
@@ -168,6 +174,13 @@
             "outputPath": "build-server",
             "main": "angular/server/server.ts",
             "tsConfig": "tsconfig.server.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "build",
+                "output": "build"
+              }
+            ],
             "extractLicenses": false
           },
           "configurations": {
