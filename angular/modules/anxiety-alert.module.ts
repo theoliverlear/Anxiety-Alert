@@ -15,6 +15,7 @@ import {AppComponent} from "../components/app/app.component";
 import {elements} from "../components/elements/elements";
 import {directives} from "../directives/directives";
 import {pages} from "../components/pages/pages";
+import {NgbCarouselModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {pages} from "../components/pages/pages";
         AppRouting,
         RouterOutlet,
         NgOptimizedImage,
-        HttpClientModule,
+        NgbCarouselModule,
+        HttpClientModule
     ],
     providers: [
         ...services,
