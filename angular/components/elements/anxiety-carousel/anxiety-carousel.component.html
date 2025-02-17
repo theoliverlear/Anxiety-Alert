@@ -1,0 +1,14 @@
+<ng-container>
+    <ngb-carousel
+            [showNavigationArrows]="true"
+            [showNavigationIndicators]="true"
+            [interval]="15000"
+            [pauseOnHover]="true"
+            [keyboard]="true"
+            [wrap]="true"
+            [activeId]="'0'">
+        <ng-template ngbSlide *ngFor="let symptom of possibleSymptoms">
+            <anxiety-symptom (severityChange)="emitTotalSeverity()" [symptom]="symptom"/>
+        </ng-template>
+    </ngb-carousel>
+</ng-container>
