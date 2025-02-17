@@ -1,5 +1,6 @@
 // nav-bar.component.ts 
 import { Component } from "@angular/core";
+import {navBarHomeElementLink} from "../../../assets/elementLinkAssets";
 
 @Component({
     selector: 'nav-bar',
@@ -10,4 +11,6 @@ export class NavBarComponent {
     constructor() {
         
     }
+
+    protected readonly navBarHomeElementLink = navBarHomeElementLink;
 }
