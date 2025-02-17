@@ -1,0 +1,19 @@
+// anxiety-carousel-style.component.scss
+@import "../../../styles/global-variables";
+@import "../../../styles/global-mixins";
+@import "../../../styles/global-functions";
+@import "../../../styles/global-placeholders";
+
+
+anxiety-carousel {
+    @include flex(center, center, column);
+
+    width: 100%;
+    margin: $one-percent 0;
+    ngb-carousel {
+        width: 100%;
+        anxiety-symptom {
+            margin: 0 auto;
+        }
+    }
+}
