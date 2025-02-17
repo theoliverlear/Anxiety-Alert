@@ -1,0 +1,5 @@
+<!-- anxiety-symptom.component.html -->
+<ng-container>
+    <ss-title [text]="symptom.title" [tagType]="TagType.H4"/>
+    <anxiety-scale (severityChange)="emitSeverityChange($event)" [symptom]="symptom"/>
+</ng-container>
