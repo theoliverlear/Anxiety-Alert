@@ -1,0 +1,19 @@
+// anxiety-popup.component.scss
+@import "../../../styles/global-variables";
+@import "../../../styles/global-mixins";
+@import "../../../styles/global-functions";
+@import "../../../styles/global-placeholders";
+
+anxiety-popup {
+    @include flex(center, center, column);
+    padding: $one-percent;
+    @extend %soft-border-radius;
+    background-image: radial-gradient(at center, $light-charcoal, $charcoal);
+    border: $alabaster-stone $thinnest-border solid;
+    box-shadow: $modern-green simplest-calc(0.05) simplest-calc(0.05) simplest-calc(0.05);
+    ss-title {
+        color: $pristine-white;
+        text-shadow: $pristine-white 0 0 simplest-calc(0.05);
+        text-decoration: underline;
+    }
+}
