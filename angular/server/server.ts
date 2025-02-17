@@ -8,6 +8,7 @@ import { NestFactory } from '@nestjs/core';
 import { INestApplication } from '@nestjs/common';
 import { AppServerModule } from './main.server';
 import {AnxietyAlertModule} from "../modules/anxiety-alert.module";
+import '@angular/localize/init';
 
 console.log('Starting SSR Server...');
 
