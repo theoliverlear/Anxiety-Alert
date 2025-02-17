@@ -1,0 +1,10 @@
+<!-- anxiety-scale.component.html -->
+<ng-container>
+    <subtitle [text]="'Slide to the slide closest to your experience.'"
+              [tagType]="TagType.H6"/>
+    <div class="description-div">
+        <ss-paragraph [text]="symptom.baselineDescription"/>
+        <ss-paragraph [text]="symptom.attackDescription"/>
+    </div>
+    <ss-input (inputEvent)="emitSeverityChange($event)" [value]="0" [inputType]="InputType.RANGE" [max]="10" [min]="0"/>
+</ng-container>
