@@ -13,12 +13,14 @@ export class AnxietyPopupComponent {
     constructor() {
         
     }
-    public setAttackStatus(attackStatus: AttackStatus) {
+    public setAttackStatus(attackStatus: AttackStatus): void {
         this.attackStatus = attackStatus;
     }
-    public updatePopup(severityLevel: number) {
-        if (severityLevel <= 35) {
+    public updatePopup(severityLevel: number): void {
+        if (severityLevel < 35) {
             this.setAttackStatus(AttackStatus.NOT_AN_ATTACK);
+        } else if (severityLevel >= 35 && severityLevel < 40) {
+            this.setAttackStatus(AttackStatus.CLOSE_TO_ATTACK);
         } else {
             this.setAttackStatus(AttackStatus.ATTACK);
         }
