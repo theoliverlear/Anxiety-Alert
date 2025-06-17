@@ -8,11 +8,14 @@ home {
     @include flex(flex-start, center, column);
     width: 100%;
     .title-question {
+        ss-title {
+            color: $modern-green;
+            text-shadow: $absolute-black simplest-calc(0.05) simplest-calc(0.05) simplest-calc(0.55);
+        }
         background-color: $charcoal;
         padding: $half-percent;
         margin: $one-percent 0;
-        color: $modern-green;
-        text-shadow: $absolute-black simplest-calc(0.05) simplest-calc(0.05) simplest-calc(0.55);
+
         @extend %soft-border-radius;
     }
 }
